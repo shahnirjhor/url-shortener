@@ -29,11 +29,11 @@ $RoleName = Auth::user()->getRoleNames();
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                @canany(['item-read', 'item-create', 'item-update', 'item-delete', 'item-export'])
+                @canany(['url-read', 'url-create', 'url-update', 'url-delete'])
                     <li class="nav-item">
-                        <a href="{{ route('item.index') }}" class="nav-link @if($c == 'item') active @endif ">
+                        <a href="{{ route('short-link.index') }}" class="nav-link @if($c == 'short-link') active @endif ">
                             <span class="mdi mdi-layers-outline nav-icon"></span>
-                            <p>@lang('Items')</p>
+                            <p>@lang('Short Link')</p>
                         </a>
                     </li>
                 @endcanany
