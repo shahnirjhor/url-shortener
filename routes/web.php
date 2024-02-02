@@ -49,12 +49,13 @@ Route::group(['middleware' => ['auth']], function () {
         'as' => 'profile.view'
     ]);
 
-    
-    
+
+
     Route::resources([
         'short-link' => App\Http\Controllers\ShortLinkController::class,
         'roles' => App\Http\Controllers\RoleController::class,
         'users' => App\Http\Controllers\UserController::class
     ]);
-    Route::get('{code}', 'App\Http\Controllers\ShortLinkController@shortenLink')->name('shorten.link');
 });
+
+Route::get('{code}', 'App\Http\Controllers\ShortLinkController@shortenLink')->name('shorten.link');
